@@ -6,7 +6,7 @@ import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-import css from 'App.module.css';
+import css from './App.module.css';
 
 export const App = () => {
   return (
