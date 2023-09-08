@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 export const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
@@ -8,11 +17,16 @@ export const Statistics = ({ title, stats }) => {
       <ul className={css.statList}>
         {stats.map(item => {
           return (
-            <li key={item.id} className={css.item}>
-            <span className={css.label}>{item.label}</span>
-            <span className={css.percentage}>{item.percentage} %</span>
-          </li>)
-          })}
+            <li
+              style={{ backgroundColor: getRandomColor() }}
+              key={item.id}
+              className={css.item}
+            >
+              <span className={css.label}>{item.label}</span>
+              <span className={css.percentage}>{item.percentage} %</span>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -21,4 +35,4 @@ export const Statistics = ({ title, stats }) => {
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.object),
-}
+};

@@ -13,19 +13,19 @@ export const TransactionHistory = ({ items }) => {
       </thead>
 
       <tbody>
-      {items.map(item => {
-        return (
-          <tr key={item.id} className={css.td}>
-            <td className={css.td}>{item.type}</td>
-            <td className={css.td}>{item.amount}</td>
-            <td className={css.td}>{item.currency}</td>
-          </tr>
-        );
-      })}
+        {items.map(item => {
+          return (
+            <tr key={item.id} className={css.td}>
+              <td className={css.td}>{item.type}</td>
+              <td className={css.td}>{item.amount}</td>
+              <td className={css.td}>{item.currency}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
-}
+};
 
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
@@ -35,5 +35,5 @@ TransactionHistory.propTypes = {
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
     })
-  )
-}
+  ),
+};
